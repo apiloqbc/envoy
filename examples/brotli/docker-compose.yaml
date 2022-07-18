@@ -1,13 +1,14 @@
 version: "3.8"
 services:
 
-  flask_service:
-    build:
-      context: ../shared/flask
-    image: flask_service:python-3.10-slim-bullseye
-    restart: "no"
-    deploy:
-      replicas: 0
+#  flask_service:
+#    platform: linux/x86_64
+#    build:
+#      context: ../shared/flask
+#    image: flask_service:python-3.10-slim-bullseye
+#    restart: "no"
+#    deploy:
+#      replicas: 0
 
   envoy-stats:
     build:
@@ -24,3 +25,4 @@ services:
       dockerfile: Dockerfile-service
     volumes:
     - ./service.py:/code/service.py
+

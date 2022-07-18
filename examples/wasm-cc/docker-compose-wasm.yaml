@@ -11,9 +11,9 @@ services:
     - ./lib:/build
 
   wasm_compile:
-    image: envoyproxy/envoy-build-ubuntu:0a02a76af5951bf7f4c7029c0ea6d29d96c0f682
+    image: envoyproxy/envoy-build-ubuntu:2635f3db824bb06340102da51ea7e292133af038
     command: |
-      bash -c "bazel build //examples/wasm-cc:envoy_filter_http_wasm_example.wasm && cp -a bazel-bin/examples/wasm-cc/* /build"
+      bash -c "bazel build //examples/wasm-cc:envoy_filter_http_wasm_example.wasm --sandbox_debug --verbose_failures && cp -a bazel-bin/examples/wasm-cc/* /build"
     working_dir: /source
     volumes:
     - ../..:/source

@@ -1,4 +1,4 @@
-FROM envoyproxy/envoy-dev:latest
+FROM --platform=linux/amd64 envoyproxy/envoy:v1.22-latest
 
 COPY ./front-envoy.yaml /etc/front-envoy.yaml
 RUN chmod go+r /etc/front-envoy.yaml
